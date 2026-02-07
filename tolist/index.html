@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tasks"></i> Advanced Todo List</h1>
+            <div class="stats">
+                <span class="stat-item" id="total-tasks">Total: 0</span>
+                <span class="stat-item" id="pending-tasks">Pending: 0</span>
+                <span class="stat-item" id="completed-tasks">Completed: 0</span>
+            </div>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="What needs to be done?">
+                <input type="date" id="task-date">
+                <select id="priority-select">
+                    <option value="low">📈 Low</option>
+                    <option value="medium" selected>📊 Medium</option>
+                    <option value="high">🚨 High</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button id="add-task-btn" class="btn-primary">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+                <button id="clear-completed-btn" class="btn-secondary">
+                    <i class="fas fa-trash"></i> Clear Completed
+                </button>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All Tasks</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" data-filter="high">High Priority</button>
+        </div>
+
+        <div class="todo-list" id="todo-list">
+            <!-- Tasks will appear here -->
+        </div>
+
+        <div class="empty-state" id="empty-state">
+            <i class="fas fa-clipboard-list fa-3x"></i>
+            <h3>No tasks found</h3>
+            <p>Add a task to get started!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
